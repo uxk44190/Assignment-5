@@ -7,62 +7,17 @@
 Scaled dot-product attention computes how much each token should attend to others in a sequence.
 Given Query (Q), Key (K), and Value (V) matrices, the attention mechanism:
 
-Attention
-(
-𝑄
-,
-𝐾
-,
-𝑉
-)
-=
-softmax
-(
-𝑄
-𝐾
-𝑇
-𝑑
-𝑘
-)
-𝑉
-Attention(Q,K,V)=softmax(
-d
-k
-	​
+Attention(Q, K, V) = softmax( (Q Kᵀ) / sqrt(dₖ) ) V
 
-	​
-
-QK
-T
-	​
-
-)V
 # Steps Implemented
 
-Compute similarity scores: 
-𝑄
-𝐾
-𝑇
-QK
-T
+- Compute similarity scores: Q K^T  
+- Scale by sqrt(d_k)  
+- Apply softmax normalization  
+- Multiply softmax weights with V to compute context  
+- Return both attention weights and context vector  
 
-Scale by 
-𝑑
-𝑘
-d
-k
-	​
-
-	​
-
-
-Apply softmax normalization
-
-Use attention weights to compute the context vector
-
-Return both attention weights and context
-
-Files Included
+# Files Included
 
 attention_numpy.py — implementation of scaled dot-product attention
 
