@@ -2,7 +2,7 @@
 
 
 
-Overview
+## Overview
 
 Scaled dot-product attention computes how much each token should attend to others in a sequence.
 Given Query (Q), Key (K), and Value (V) matrices, the attention mechanism:
@@ -37,7 +37,7 @@ T
 	​
 
 )V
-Steps Implemented
+# Steps Implemented
 
 Compute similarity scores: 
 𝑄
@@ -68,7 +68,7 @@ attention_numpy.py — implementation of scaled dot-product attention
 
 Includes sample test with random Q, K, V inputs
 
-Expected Output
+# Expected Output
 
 Attention weights shape: (batch, seq_len, seq_len)
 
